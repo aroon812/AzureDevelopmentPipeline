@@ -23,7 +23,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)/AzureDevOpsCI/bin'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/AzureDevOps-CI/bin'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
