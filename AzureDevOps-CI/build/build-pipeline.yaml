@@ -5,10 +5,21 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script v2'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
+    vstsFeed: '3a9df314-b1d5-4d3c-b82e-3c97dd2d5993'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**./*.csproj'
 
-- script:
-    echo Add a multiline script v2
-    echo One more
-  displayName: 'Run a multi-line script v2'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*Tests.csproj'
+
+- script: echo All done
+  displayName: 'All done'
