@@ -24,8 +24,8 @@ steps:
     SonarCloud: 'sonarcloud'
     organization: 'athompson812'
     scannerMode: 'MSBuild'
-    projectKey: 'AzureDevelopmentPipeline'
-    projectName: 'AzureDevelopmentPipeline'
+    projectKey: 'athompson812_AzureDevOps-CI'
+    projectName: 'AzureDevOps-CI'
     projectVersion: '$(Build.BuildNumber)'
     extraProperties: |
       sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
