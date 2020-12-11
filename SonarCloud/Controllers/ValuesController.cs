@@ -4,12 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AzureDevOps_CI.Controllers
+namespace SonarCloud.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        // Insecure field
+        const string Password = "p4ssw0rd";
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
